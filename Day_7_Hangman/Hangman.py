@@ -1,0 +1,37 @@
+import random
+
+word_list = ["aardvark","baboon","camel"] # список слов для игры
+
+chosen_word = random.choice(word_list) # рандомное присвоение слова переменной chosen_word
+print (chosen_word)
+
+# создание подчеркиваний для скрытия рандомного слова
+placeholder = ""
+word_lenth = len(chosen_word)
+for position in range(word_lenth):
+    placeholder += "_"
+print(placeholder)
+
+# угадывание буквы, регистр маленькимы буквами через цикл While
+game_over = False
+correct_letters = []
+
+while not game_over:
+    guess =  input("Guess a letter: ").lower()
+
+    display =""
+
+    for letter in chosen_word:
+        if letter == guess:
+            display += letter
+            correct_letters.append(guess)
+        elif letter in correct_letters:
+            display += letter
+        else:
+            display += "_"
+
+    print (display)
+
+    if "_" not in display:
+        game_over = True
+        print("You win.")
