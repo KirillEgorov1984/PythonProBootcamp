@@ -3,8 +3,6 @@ def calculate_love_score(name_one, name_two):
     lower_names = combined_names.lower()
 
     t = lower_names.count("t")
-    print(t)
-
     r = lower_names.count("r")
     u = lower_names.count("u")
     e = lower_names.count("e")
